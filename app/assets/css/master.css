@@ -1,3 +1,4 @@
 @import url(bootstrap.min.css);
 
 @import url(../../app/main/main.css);
+@import url(../../app/shared/navbar/styles/navbarStyle.css);

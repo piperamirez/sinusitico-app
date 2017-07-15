@@ -5,19 +5,32 @@ angular.module('sinusitico.app',[
   'ngCookies',
   'ngRoute',
   'ui.bootstrap',
-  'main.controller'
+  'main.controller',
+  'navbar.controller'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/main");
+  $urlRouterProvider.otherwise("/main/app");
 
   $stateProvider
 
   .state('main', {
     url: "/main",
-    templateUrl: 'app/main/mainView.html',
-    controller: 'MainController'
+    templateUrl: 'app/main/mainView.html'
+  })
+
+  .state('main.app', {
+    url: "/app",
+    views: {
+      'navbar-view': {
+        templateUrl: 'app/shared/navbar/views/navbarView.html',
+        controller: 'NavbarController'
+      },
+      'content-view': {
+        templateUrl: 'app/shared/content/views/contentView.html'
+      }
+    }
   })
 
 })
