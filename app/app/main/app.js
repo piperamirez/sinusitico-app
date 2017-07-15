@@ -6,7 +6,9 @@ angular.module('sinusitico.app',[
   'ngRoute',
   'ui.bootstrap',
   'main.controller',
-  'navbar.controller'
+  'config.constant',
+  'navbar.controller',
+  'lead.services.factory'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
