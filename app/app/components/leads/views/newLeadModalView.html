@@ -19,7 +19,7 @@
       <div class="form-group">
         <label>Email</label>
         <input
-          type="email"
+          type="text"
           class="form-control"
           ng-model="leadData.email">
       </div>
@@ -28,7 +28,7 @@
       <div class="form-group">
         <label>Teléfono</label>
         <input
-          type="number"
+          type="text"
           class="form-control"
           ng-model="leadData.telefono">
       </div>
@@ -46,7 +46,7 @@
       <div class="form-group">
         <label>Cargo</label>
         <input
-          type="number"
+          type="text"
           class="form-control"
           ng-model="leadData.cargo">
       </div>
@@ -56,7 +56,7 @@
         <label>Empresa</label>
         <select
           class="form-control"
-          ng-options="src as src.nombre for src in options.empresas track by src.id"
+          ng-options="src.nombre as src.nombre for src in options.empresas track by src.id"
           ng-model="leadData.empresa">
           <option selected disabled value="">Selecciona</option>
         </select>
@@ -64,9 +64,9 @@
       <div class="form-group">
         <label>Oportunidad</label>
         <input
-          type="number"
+          type="text"
           class="form-control"
-          placeholder="Describe lo que se podría vender a este prospecto"
+          placeholder="¿Qué se podría vender a este prospecto?"
           ng-model="leadData.comentarios">
       </div>
     </div>
