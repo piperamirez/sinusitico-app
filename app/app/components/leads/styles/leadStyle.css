@@ -1,0 +1,25 @@
+.lead-list {
+}
+
+.lead-list .media {
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.lead-list img.star {
+  position: absolute;
+}
+
+.lead-list img.media-object {
+  margin-left: 8px;
+}
+
+.lead-list .media h4 {
+  margin-bottom: 2px;
+}
+
+.lead-list .media {
+  border-bottom: 1px solid #e6e6e6;
+}

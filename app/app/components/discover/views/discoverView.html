@@ -1,4 +1,13 @@
-<div class="text-center">
-  <h2>Discover</h2>
-  <p>Not implemented yet</p>
+<div class="lead-list">
+  <div class="media" ng-repeat="lead in leads">
+    <div class="media-left">
+      <img class="star" src="assets/img/star.svg">
+      <img class="media-object" src="assets/img/user-thumbnail.svg">
+    </div>
+    <div class="media-body">
+      <span class="lead-time pull-right text-primary">{{lead.days_pass}} días</span>
+      <h4 class="media-heading">{{lead.name}}</h4>
+      {{lead.role}}
+    </div>
+  </div>
 </div>

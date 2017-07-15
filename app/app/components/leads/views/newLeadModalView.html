@@ -56,7 +56,7 @@
         <label>Empresa</label>
         <select
           class="form-control"
-          ng-options="src.nombre as src.nombre for src in options.empresas track by src.id"
+          ng-options="src as src.nombre for src in options.empresas track by src.id"
           ng-model="leadData.empresa">
           <option selected disabled value="">Selecciona</option>
         </select>

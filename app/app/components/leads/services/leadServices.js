@@ -5,7 +5,10 @@ angular.module('leads.services.factory', [])
   return {
     postLead: function(payload) {
       return $resource(config.api + '/lead', {}).save(payload).$promise
-    }
+    },
+    getLeads: function(payload) {
+      return $resource(config.api + '/list', {}).get().$promise
+    },
   }
 
 })
