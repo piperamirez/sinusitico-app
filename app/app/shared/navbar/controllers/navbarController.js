@@ -28,6 +28,7 @@ angular.module('navbar.controller', [])
     )
   }
 
-  $scope.newLead()
+  // TODO: remove the line below
+  //$scope.newLead()
 
 })

@@ -6,14 +6,16 @@ angular.module('sinusitico.app',[
   'ngRoute',
   'ui.bootstrap',
   'main.controller',
+  'discover.controller',
+  'leads.controller',
+  'leads.services.factory',
   'config.constant',
-  'navbar.controller',
-  'lead.services.factory'
+  'navbar.controller'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/main/app");
+  $urlRouterProvider.otherwise("/main/app/discover");
 
   $stateProvider
 
@@ -31,6 +33,26 @@ angular.module('sinusitico.app',[
       },
       'content-view': {
         templateUrl: 'app/shared/content/views/contentView.html'
+      }
+    }
+  })
+
+  .state('main.app.discover', {
+    url: "/discover",
+    views: {
+      'component-view': {
+        templateUrl: 'app/components/discover/views/discoverView.html',
+        controller: 'DiscoverController'
+      }
+    }
+  })
+
+  .state('main.app.leads', {
+    url: "/leads",
+    views: {
+      'component-view': {
+        templateUrl: 'app/components/leads/views/leadsView.html',
+        controller: 'LeadsController'
       }
     }
   })

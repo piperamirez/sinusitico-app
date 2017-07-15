@@ -1,4 +1,4 @@
-angular.module('lead.services.factory', [])
+angular.module('leads.services.factory', [])
 
 .factory('LeadServicesFactory', function($resource, config) {
 
