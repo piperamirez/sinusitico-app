@@ -1,3 +1,9 @@
 nav .btn-navbar {
   margin-top: 8px;
 }
+
+nav img.leadify-logo-nav {
+  margin-left: 13px;
+  margin-top: 10px;
+  margin-right: 8px;
+}
