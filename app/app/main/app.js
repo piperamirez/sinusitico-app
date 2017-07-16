@@ -13,7 +13,8 @@ angular.module('sinusitico.app',[
   'login.controller',
   'login.services.factory',
   'config.constant',
-  'navbar.controller'
+  'navbar.controller',
+  'lead.detail.controller'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -65,6 +66,17 @@ angular.module('sinusitico.app',[
         controller: 'LeadsController'
       }
     }
+  })
+
+  .state('main.app.lead-detail', {
+    url: "/lead-detail",
+    views: {
+      'component-view': {
+        templateUrl: 'app/components/leads/views/leadDetailView.html',
+        controller: 'LeadDetailController'
+      }
+    },
+    params: {lead: null}
   })
 
 })

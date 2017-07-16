@@ -1,5 +1,6 @@
-<div class="lead-list">
-  <div class="media" ng-repeat="lead in leads track by $index" ng-click="presentLeadDetail(lead)">
+<div id="map-detail"></div>
+<div class="lead-detail">
+  <div class="media">
     <div class="media-left">
       <img ng-if="lead.is_premium" class="star" src="assets/img/star.svg">
       <img class="media-object" src="assets/img/user-thumbnail.svg">
@@ -9,5 +10,12 @@
       <h4 class="media-heading">{{lead.name}}</h4>
       {{lead.role}}
     </div>
+    <p class="published-on">Publicado en {{lead.pub_date | date}}</p>
   </div>
+</div>
+<div class="padding">
+  <a class="btn btn-lg btn-block btn-success" ng-if="lead.phone" ng-href="tel:{{lead.phone}}">Llamar</a>
+</div>
+<div class="padding">
+  <button class="btn btn-lg btn-block btn-primary">Gestionar Lead</button>
 </div>
