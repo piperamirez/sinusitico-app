@@ -61,3 +61,12 @@
   margin-bottom: 0px;
   color: gray;
 }
+
+.glyphicon-xl {
+  font-size: 48px;
+  margin-top: 10px;
+}
+
+.lead-gestionado h3 {
+  margin-top: 10px;
+}
