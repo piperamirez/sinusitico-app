@@ -1,6 +1,6 @@
 angular.module('navbar.controller', [])
 
-.controller('NavbarController', function($scope, $modal, $timeout, LeadServicesFactory) {
+.controller('NavbarController', function($scope, $modal, $timeout, $state, LeadServicesFactory, Storage) {
 
   LeadServicesFactory.getEnterprises().then(
     function(response) {
@@ -66,6 +66,11 @@ angular.module('navbar.controller', [])
         $scope.newLeadModal.close()
       }
     )
+  }
+
+  $scope.logout = function() {
+    Storage.getObject('sinusitico.currentUser')
+    $state.go('login')
   }
 
   // TODO: remove the line below

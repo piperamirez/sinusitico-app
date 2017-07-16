@@ -7,10 +7,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="leadify-logo-nav" src="assets/img/leadify-logo-nav.svg" alt="">
+      <img class="leadify-logo-nav" src="assets/img/leadify-logo-nav.svg">
       <button
-        ng-show="profile == 'publisher'"
-        class="btn btn-success btn-navbar"
+        ng-show="currentUser.user_type == 'publisher'"
+        class="btn btn-primary btn-navbar"
         ng-click="newLead()">
           Nuevo lead
       </button>
@@ -31,6 +31,11 @@
           <a ui-sref="main.app.reports">Reportes</a>
         </li>
       </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href ng-click="logout()">Cerrar sesión</a></li>
+      </ul>
+
     </div>
 
   </div>

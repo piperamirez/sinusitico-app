@@ -1,7 +1,7 @@
 angular.module('main.controller', [])
 
-.controller('MainController', function($rootScope) {
+.controller('MainController', function($rootScope, Storage) {
 
-  $rootScope.profile = 'publisher'
+  $rootScope.currentUser = Storage.getObject('sinusitico.currentUser')
 
 })

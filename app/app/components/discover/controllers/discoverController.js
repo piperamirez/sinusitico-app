@@ -1,6 +1,6 @@
 angular.module('discover.controller', [])
 
-.controller('DiscoverController', function($scope, $interval, LeadServicesFactory) {
+.controller('DiscoverController', function($scope, $interval, LeadServicesFactory, Storage) {
 
   function getLeads() {
     LeadServicesFactory.getLeads().then(

@@ -1,0 +1,38 @@
+<div class="login-view">
+  <div class="content-wrapper">
+    <div class="text-center">
+      <img src="assets/img/sinusitico-logo-lg.svg"/>
+      <h3>¡Bienvenido!</h3>
+      <p class="text-muted">Inicia sesión con tu Leadin ID</p>
+    </div>
+    <form
+      name="form"
+      ng-submit="doLogin()">
+      <br>
+      <div class="form-group">
+        <input
+          class="form-control input-lg"
+          ng-model="loginData.username"
+          type="text"
+          placeholder="Usuario">
+      </div>
+      <div class="form-group">
+        <input
+          class="form-control input-lg"
+          type="password"
+          placeholder="Contraseña">
+      </div>
+      <br>
+      <div class="form-group">
+        <button class="btn btn-primary btn-lg btn-block">
+          Iniciar sesión
+        </button>
+      </div>
+    </form>
+    <div class="text-center">
+      <p class="text-muted"><a  ui-sref="main.public.forgot">¿Olvidaste tu contraseña?</a></p>
+      <img src="assets/img/snobf.svg"/>
+      <p class="text-copyright"><small>Snobf Corp. 2017. Todos los derechos reservados.</small></p>
+    </div>
+  </div>
+</div>

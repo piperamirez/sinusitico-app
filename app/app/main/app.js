@@ -6,18 +6,27 @@ angular.module('sinusitico.app',[
   'ngRoute',
   'ui.bootstrap',
   'main.controller',
+  'main.storage',
   'discover.controller',
   'leads.controller',
   'leads.services.factory',
+  'login.controller',
+  'login.services.factory',
   'config.constant',
   'navbar.controller'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/main/app/discover");
+  $urlRouterProvider.otherwise("login");
 
   $stateProvider
+
+  .state('login', {
+    url: "/login",
+    templateUrl: 'app/components/login/views/loginView.html',
+    controller: 'LoginController'
+  })
 
   .state('main', {
     url: "/main",
