@@ -14,8 +14,10 @@
   </div>
 </div>
 <div class="padding">
-  <a class="btn btn-lg btn-block btn-success" ng-if="lead.phone" ng-href="tel:{{lead.phone}}">Llamar</a>
+  <a class="btn btn-lg btn-block btn-success" ng-if="lead.phone" ng-href="tel:{{lead.phone}}">
+    Llamar
+  </a>
 </div>
-<div class="padding">
+<div class="padding" ng-show="currentUser.user_type == 'consumer'">
   <button class="btn btn-lg btn-block btn-primary">Gestionar Lead</button>
 </div>
