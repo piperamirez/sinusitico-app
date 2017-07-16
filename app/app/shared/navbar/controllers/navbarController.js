@@ -2,13 +2,13 @@ angular.module('navbar.controller', [])
 
 .controller('NavbarController', function($scope, $modal, $timeout, LeadServicesFactory) {
 
-  $scope.leadData = {}
-
-  $scope.options ={
-    empresas: [
-      {id: 1, nombre: 'Widefense S.A.'}
-    ]
-  }
+  LeadServicesFactory.getEnterprises().then(
+    function(response) {
+      $scope.options = {
+        empresas: response.list
+      }
+    }
+  )
 
   function drawMap(position) {
 
@@ -50,6 +50,7 @@ angular.module('navbar.controller', [])
   }
 
   $scope.newLead = function() {
+    $scope.leadData = {}
     $scope.newLeadModal = $modal.open({
       scope: $scope,
       animation: true,
@@ -63,8 +64,7 @@ angular.module('navbar.controller', [])
     LeadServicesFactory.postLead($scope.leadData).then(
       function(response) {
         $scope.newLeadModal.close()
-      },
-      function(error) {}
+      }
     )
   }
 

@@ -9,6 +9,9 @@ angular.module('leads.services.factory', [])
     getLeads: function(payload) {
       return $resource(config.api + '/list', {}).get().$promise
     },
+    getEnterprises: function() {
+      return $resource(config.api + '/enterprise', {}).get().$promise
+    }
   }
 
 })
