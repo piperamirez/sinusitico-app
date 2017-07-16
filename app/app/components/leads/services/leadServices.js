@@ -17,6 +17,9 @@ angular.module('leads.services.factory', [])
     },
     getEnterprises: function() {
       return $resource(config.api + '/enterprise', {}).get().$promise
+    },
+    getStats: function() {
+      return $resource(config.api + '/stats', {}).get().$promise
     }
   }
 

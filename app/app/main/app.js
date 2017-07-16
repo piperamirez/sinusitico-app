@@ -5,6 +5,7 @@ angular.module('sinusitico.app',[
   'ngCookies',
   'ngRoute',
   'ui.bootstrap',
+  'googlechart',
   'main.controller',
   'main.storage',
   'discover.controller',
@@ -14,7 +15,8 @@ angular.module('sinusitico.app',[
   'login.services.factory',
   'config.constant',
   'navbar.controller',
-  'lead.detail.controller'
+  'lead.detail.controller',
+  'reports.controller'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -77,6 +79,16 @@ angular.module('sinusitico.app',[
       }
     },
     params: {lead: null}
+  })
+
+  .state('main.app.reports', {
+    url: "/reports",
+    views: {
+      'component-view': {
+        templateUrl: 'app/components/reports/reportsView.html',
+        controller: 'ReportsController'
+      }
+    }
   })
 
 })
