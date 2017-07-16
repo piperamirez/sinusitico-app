@@ -11,6 +11,10 @@ angular.module('discover.controller', [])
   }
 
   getLeads()
-  stop = $interval(getLeads, 2000);
+  leadInterval = $interval(getLeads, 2000);
+
+  $scope.$on('$stateChangeStart', function () {
+    $interval.cancel(leadInterval);
+  })
 
 })
