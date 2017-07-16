@@ -1,5 +1,7 @@
 angular.module('main.controller', [])
 
-.controller('MainController', function($scope) {
-  
+.controller('MainController', function($rootScope) {
+
+  $rootScope.profile = 'publisher'
+
 })

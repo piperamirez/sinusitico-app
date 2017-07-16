@@ -21,7 +21,8 @@ angular.module('sinusitico.app',[
 
   .state('main', {
     url: "/main",
-    templateUrl: 'app/main/mainView.html'
+    templateUrl: 'app/main/mainView.html',
+    controller: 'MainController'
   })
 
   .state('main.app', {
