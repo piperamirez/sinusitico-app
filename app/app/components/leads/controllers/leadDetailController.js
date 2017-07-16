@@ -1,6 +1,6 @@
 angular.module('lead.detail.controller', [])
 
-.controller('LeadDetailController', function($scope, $state, $timeout, $stateParams) {
+.controller('LeadDetailController', function($scope, $state, $timeout, $stateParams, LeadServicesFactory) {
 
   $scope.lead = $stateParams.lead
   //$scope.lead = {"id": 20, "name": "Andr\u00e9s Errazuriz", "pub_date": "2017-06-17T00:00:00Z", "email": "Andr\u00e9s.Errazuriz@gmail.com", "enterprise": 5, "location": {"lat": 11, "lng": 10}, "role": "Gerente de Operaciones", "address": null, "phone": "562 7384 6428", "tags": null, "facebook_link": null, "linkedin_link": null, "instagram_link": null, "oportunity": null, "close_date": null, "days_pass": 29, "is_premium": true}
@@ -30,7 +30,13 @@ angular.module('lead.detail.controller', [])
   setupMap()
 
   $scope.gestionarLead = function(lead) {
-    $scope.leadGestionado = true
+    console.log(lead);
+    lead.accepted = true
+    LeadServicesFactory.putLeadState(lead).then(
+      function(response) {
+        $scope.leadGestionado = true
+      }
+    )
   }
 
 })

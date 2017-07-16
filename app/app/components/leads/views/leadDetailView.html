@@ -19,7 +19,7 @@
   </a>
 </div>
 <div class="padding" ng-show="currentUser.user_type == 'consumer'">
-  <button class="btn btn-lg btn-block btn-info" ng-hide="leadGestionado" ng-click="gestionarLead(lead)">Gestionar Lead</button>
+  <button class="btn btn-lg btn-block btn-info" ng-hide="leadGestionado || lead.accepted" ng-click="gestionarLead(lead)">Gestionar Lead</button>
   <div class="text-center lead-gestionado" ng-if="leadGestionado">
     <span class="glyphicon glyphicon-xl glyphicon-ok text-success"></span>
     <h3 class="text-success">¡Felicitaciones!</h3>

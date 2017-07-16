@@ -1,6 +1,6 @@
 angular.module('leads.controller', [])
 
-.controller('LeadsController', function($scope, $interval, LeadServicesFactory) {
+.controller('LeadsController', function($scope, $interval, $state, LeadServicesFactory) {
 
   function getLeads() {
     LeadServicesFactory.getUserLeads().then(

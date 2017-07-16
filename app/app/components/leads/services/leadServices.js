@@ -10,8 +10,10 @@ angular.module('leads.services.factory', [])
       return $resource(config.api + '/list', {}).get().$promise
     },
     getUserLeads: function(payload) {
-
       return $resource(config.api + '/list_user', {userid: $rootScope.currentUser.id}).get().$promise
+    },
+    putLeadState: function(payload) {
+      return $resource(config.api + '/lead_update', {userid: $rootScope.currentUser.id}).save(payload).$promise
     },
     getEnterprises: function() {
       return $resource(config.api + '/enterprise', {}).get().$promise
