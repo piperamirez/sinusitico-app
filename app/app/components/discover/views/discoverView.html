@@ -1,5 +1,5 @@
 <div class="lead-list">
-  <div class="media" ng-repeat="lead in leads">
+  <div class="media" ng-repeat="lead in leads track by $index">
     <div class="media-left">
       <img ng-if="lead.is_premium" class="star" src="assets/img/star.svg">
       <img class="media-object" src="assets/img/user-thumbnail.svg">

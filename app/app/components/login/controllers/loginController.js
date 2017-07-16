@@ -7,7 +7,6 @@ angular.module('login.controller', [])
   $scope.doLogin = function() {
     LoginServicesFactory.postLogin($scope.loginData).then(
       function(response) {
-        console.log(response)
         Storage.setObject('sinusitico.currentUser', response)
         $state.go('main.app.discover')
       }
