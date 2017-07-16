@@ -1,13 +1,16 @@
 angular.module('discover.controller', [])
 
-.controller('DiscoverController', function($scope, LeadServicesFactory) {
+.controller('DiscoverController', function($scope, $interval, LeadServicesFactory) {
 
-  LeadServicesFactory.getLeads().then(
-    function(response) {
-      console.log(response);
-      $scope.leads = response.list
-    },
-    function(error) {}
-  )
+  function getLeads() {
+    LeadServicesFactory.getLeads().then(
+      function(response) {
+        $scope.leads = response.list
+      }
+    )
+  }
+
+  getLeads()
+  stop = $interval(getLeads, 2000);
 
 })
