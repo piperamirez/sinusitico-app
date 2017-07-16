@@ -21,5 +21,11 @@
 }
 
 .lead-list .media {
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#map {
+    height: 150px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: silver;
 }
