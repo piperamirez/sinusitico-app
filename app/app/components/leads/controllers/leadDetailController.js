@@ -30,6 +30,7 @@ angular.module('lead.detail.controller', [])
   setupMap()
 
   $scope.gestionarLead = function(lead) {
+    $scope.leadGestionado = true
     lead.accepted = true
     LeadServicesFactory.putLeadState(lead).then(
       function(response) {
@@ -42,9 +43,11 @@ angular.module('lead.detail.controller', [])
     if (success) {
       lead.close_won = true
       lead.close_lost = false
+      $scope.leadCerradoSuccess = true
     } else {
       lead.close_won = false
       lead.close_lost = true
+      $scope.leadCerradoFail = true
     }
     LeadServicesFactory.putLeadState(lead).then(
       function(response) {
