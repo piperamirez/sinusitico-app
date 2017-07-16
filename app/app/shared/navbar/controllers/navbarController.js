@@ -70,11 +70,7 @@ angular.module('navbar.controller', [])
   }
 
   $scope.logout = function() {
-    Storage.getObject('sinusitico.currentUser')
     $state.go('login')
   }
-
-  // TODO: remove the line below
-  //$scope.newLead()
 
 })

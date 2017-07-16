@@ -46,5 +46,15 @@
   <script charset="UTF-8" src="app/components/discover/controllers/discoverController.js"></script>
   <script charset="UTF-8" src="app/shared/navbar/controllers/navbarController.js"></script>
 
+  <script type="text/javascript">
+    $(function() {
+      $(document).on('click','.navbar-collapse.in',function(e) {
+          if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+              $(this).collapse('hide');
+          }
+      });
+    });
+  </script>
+
 </body>
 </html>

@@ -21,7 +21,7 @@
         <li ui-sref-active="active">
           <a ui-sref="main.app.discover">Descubre</a>
         </li>
-        <li ui-sref-active="active">
+        <li ui-sref-active="active" ng-hide="currentUser.user_type == 'publisher'">
           <a ui-sref="main.app.leads">Mis Leads</a>
         </li>
         <li ui-sref-active="active" class="disabled">
