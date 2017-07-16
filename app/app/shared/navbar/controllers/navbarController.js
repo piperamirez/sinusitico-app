@@ -61,6 +61,7 @@ angular.module('navbar.controller', [])
   }
 
   $scope.postNewLead = function() {
+    $scope.leadData.location = $scope.leadData.position.lat + ' ' + $scope.leadData.position.lng
     LeadServicesFactory.postLead($scope.leadData).then(
       function(response) {
         $scope.newLeadModal.close()

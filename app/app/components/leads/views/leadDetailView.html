@@ -19,10 +19,31 @@
   </a>
 </div>
 <div class="padding" ng-show="currentUser.user_type == 'consumer'">
-  <button class="btn btn-lg btn-block btn-info" ng-hide="leadGestionado || lead.accepted" ng-click="gestionarLead(lead)">Gestionar Lead</button>
+  <button class="btn btn-lg btn-block btn-info" ng-hide="leadGestionado || lead.accepted" ng-click="gestionarLead(lead)">
+    Gestionar Lead
+  </button>
   <div class="text-center lead-gestionado" ng-if="leadGestionado">
     <span class="glyphicon glyphicon-xl glyphicon-ok text-success"></span>
     <h3 class="text-success">¡Felicitaciones!</h3>
     <p>Ya estás gestionando este lead. Revisa tus leads gestionados en <strong>Mis Leads</strong>.</p>
+  </div>
+  <br>
+  <div ng-hide="leadGestionado || leadCerradoSuccess || leadCerradoFail">
+    <button class="btn btn-lg btn-block btn-success" ng-show="lead.accepted" ng-click="completeLead(lead, true)">
+      Convertí este lead
+    </button>
+    <button class="btn btn-lg btn-block btn-danger" ng-show="lead.accepted" ng-click="completeLead(lead, false)">
+      Perdí este lead
+    </button>
+  </div>
+  <div class="text-center lead-gestionado" ng-if="leadCerradoSuccess">
+    <span class="glyphicon glyphicon-xl glyphicon-ok text-success"></span>
+    <h3 class="text-success">¡Felicitaciones!</h3>
+    <p>¡Sigue así! 🎉</p>
+  </div>
+  <div class="text-center lead-gestionado" ng-if="leadCerradoFail">
+    <span class="glyphicon glyphicon-xl glyphicon-heart text-info"></span>
+    <h3 class="text-info">Pucha</h3>
+    <p>Será para la próxima 😊</p>
   </div>
 </div>
